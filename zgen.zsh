@@ -148,9 +148,8 @@ zgen-clone() {
 
 -zgen-source() {
     local file="${1}"
-    local base=$(basename "${file}")
 
-    if [[ ! "${base}" =~ "^_" && ! "${ZGEN_LOADED[@]}" =~ "${file}" ]]; then
+    if [[ ! "${ZGEN_LOADED[@]}" =~ "${file}" ]]; then
         ZGEN_LOADED+=("${file}")
         source "${file}"
 
